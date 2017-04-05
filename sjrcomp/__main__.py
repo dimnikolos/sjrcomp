@@ -3,11 +3,18 @@ from sjrcompParser import *
 from sjrcompHTML   import *
 from os import listdir,path
 
+
+def keyFromStr(string):
+	if string[2]=='_':
+		return(string[3:5])
+	else:
+		return(string[2:4])
+
 def listOfFileNames(dataDir):
     files = [f for f in listdir(dataDir)]
     files = [f for f in files if path.splitext(f)[1] == '.sjr']
-    return(files)
-    
+    return(sorted(files, key = keyFromStr))
+
 def main():
     dataPath = "./data"
     strippedJsonList = []

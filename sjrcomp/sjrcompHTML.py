@@ -26,6 +26,8 @@ def mapCommands(command, param = None):
     #trigger
     elif command == 'onflag':
         return("<i style='color:green;' class='fa fa-flag' aria-hidden='true'></i>")
+    elif command == 'onclick':
+        return("<i style='color:yellow;' class='fa fa-hand-o-up' aria-hidden='true'></i>")
     elif command == 'endstack':
         return("<font color=red>)</font>")
     elif command == 'onmessage':
