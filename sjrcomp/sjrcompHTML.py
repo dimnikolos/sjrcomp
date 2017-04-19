@@ -68,7 +68,7 @@ def strippedJson2htmlrow(strippedJson, maxpagenum = 2, maxspritenum = 2):
     returnString += ("<td>" + strippedJson["filename"] + "</td>")
     for pageNum in range(maxpagenum):
         if pageNum < len(strippedJson["pages"]):
-            curPage = strippedJson["pages"][pageNum]
+            curPage = sorted(strippedJson["pages"])[pageNum]
             for spriteNum in range(maxspritenum):
                 if spriteNum < len(strippedJson[curPage]["sprites"]):
                     curSprite = strippedJson[curPage]["sprites"][spriteNum]
